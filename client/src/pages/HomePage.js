@@ -3,12 +3,14 @@ import axios from "axios";
 import Layout from "./../components/Layout";
 import { Row } from "antd";
 import DoctorList from "../components/DoctorList";
+import { api } from "../api";
+
 const HomePage = () => {
   const [doctors, setDoctors] = useState([]);
   // login user data
   const getUserData = async () => {
     try {
-      const res = await axios.get(
+      const res = await api.get(
         "/api/v1/user/getAllDoctors",
 
         {
